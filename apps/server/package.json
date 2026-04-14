@@ -1,0 +1,14 @@
+{
+  "name": "duck-hunt-backend",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Duck Hunt backend server",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node --watch main.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}

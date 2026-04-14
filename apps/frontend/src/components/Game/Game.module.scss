@@ -1,0 +1,27 @@
+.game {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 80%;
+  height: 90%;
+  border-radius: 15px;
+  border: 1px solid #000;
+  background: #98d2ff;
+
+  &__score {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: #0d2238;
+  }
+
+  &__description {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    color: #0d2238;
+  }
+}

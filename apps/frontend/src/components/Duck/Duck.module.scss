@@ -1,0 +1,72 @@
+.duck {
+  --start-x: 30%;
+  --start-y: 80%;
+  --mid-x: 60%;
+  --mid-y: 70%;
+  --end-x: 100%;
+  --end-y: 20%;
+  --flight-duration: 5000ms;
+  --animation-delay: 0;
+
+  position: absolute;
+  width: 15%;
+  height: 15%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fly var(--flight-duration) ease-in-out forwards
+    var(--animation-delay);
+  cursor: pointer;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/assets/images/duck_1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    animation: flap 0.5s infinite;
+  }
+
+  &--hitted {
+    animation-play-state: paused;
+    pointer-events: none;
+
+    .duck__image {
+      animation: none;
+      background-image: url("/src/assets/images/duck_3.png");
+    }
+  }
+
+  &--reversed {
+    transform: translateX(-100%) scaleX(-1);
+  }
+}
+
+@keyframes fly {
+  0% {
+    top: var(--start-y);
+    left: var(--start-x);
+  }
+  50% {
+    top: var(--mid-y);
+    left: var(--mid-x);
+  }
+  100% {
+    top: var(--end-y);
+    left: var(--end-x);
+  }
+}
+
+@keyframes flap {
+  0% {
+    background-image: url("/src/assets/images/duck_1.png");
+  }
+  50% {
+    background-image: url("/src/assets/images/duck_2.png");
+  }
+  100% {
+    background-image: url("/src/assets/images/duck_1.png");
+  }
+}
